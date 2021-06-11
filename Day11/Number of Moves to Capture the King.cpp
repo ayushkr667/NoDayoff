@@ -30,7 +30,7 @@ bool isvalid(int x, int y){
     return false;
 }
 
-void bfs(int c, int d){
+int bfs(int c, int d, vector<vector<int>> board){
     queue<pair<int, int>> q;
     q.push({c,d});
     while(!q.empty()){
@@ -42,34 +42,28 @@ void bfs(int c, int d){
             int y_n = y + dy[i];
             if(isvalid(x_n, y_n)){
                 visit[x_n][y_n] = min(visit[x_n][y_n], visit[x][y] + 1);
+                if(board[x_n][y_n] == 1)
+                    return visit[x_n][y_n];
+
                 q.push({x_n, y_n});
             }
         }
     }
+    return -1;
 }
 
 int solve(vector<vector<int>>& board) {
     n = board.size();
     visit.assign(n, vector<int>(n, INT_MAX));
+    int res = -1;
     for(int i=0; i<n; i++){
         for(int j=0; j<n; j++){
             if(board[i][j] == 2){
                 visit[i][j] = 0;
-                bfs(i, j);
+                res = bfs(i, j, board);
                 break;
             }
         }
     }
-    int res = INT_MAX;
-    for(int i=0; i<n; i++){
-        for(int j=0; j<n; j++){
-            if(visit[i][j] != INT_MAX && board[i][j] == 1){
-                res = min(visit[i][j], res);
-            } 
-        }
-    }
-    if( res != INT_MAX ){
-        return res;
-    }
-    return -1;
+    return res;
 }
