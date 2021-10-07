@@ -3,6 +3,8 @@
 
 ///////////////////////////////////////////////////////////
 
+
+
 //graph does not contain a cycle of odd length if and only if it is Bipartite i.e., it can be colored with two colors.
 int n, m;
 vector<int>color;
