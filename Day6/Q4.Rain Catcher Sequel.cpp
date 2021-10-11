@@ -17,6 +17,7 @@
 // Explanation
 // We can hold 3 unit of water in between the 1 and 2 squares.
 
+
 ///////////////////////////////////////////////////////////////////////////
 
 struct cell{
