@@ -11,6 +11,8 @@ is the number of leaves in the tree and the second number is the number of inter
  *         Tree *right;
  * };
  */
+    
+    
 void calc(Tree* node, int &leaf, int &non){
     if(node == NULL){
         return;
