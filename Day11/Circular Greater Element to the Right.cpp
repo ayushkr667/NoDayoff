@@ -12,8 +12,6 @@
 
 //////////////////////////////////////////////////////////////////////////
 
-
-
 vector<int> solve(vector<int>& nums) {
     int n = nums.size();
     nums.insert(nums.end(), nums.begin(), nums.end());
@@ -28,5 +26,3 @@ vector<int> solve(vector<int>& nums) {
     }
     return ans;
 }
-
-
