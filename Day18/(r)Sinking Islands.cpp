@@ -26,8 +26,6 @@
 
 //////////////////////////////////////////////////////////////////////////////////////////
 
-
-
 int n, m;
 void dfs(int i, int j, vector<vector<int>>& matrix, vector<vector<int>>& mark) {
     if (i < 0 || j < 0 || i >= n || j > m || mark[i][j] || matrix[i][j] == 0) return;
